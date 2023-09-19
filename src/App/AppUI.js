@@ -7,7 +7,8 @@ import { TodosLoading } from "../TodosLoading/TodosLoading.js";
 import { TodosError } from "../TodosError/TodosError.js";
 import { EmptyTodos } from "../EmptyTodos/EmptyTodos.js";
 import { CreateTodoButton } from "../CreateTodoButton/CreateTodoButton.js";
-import { Modal } from "../Modal/modal.js";
+import { Modal } from "../Modal/Modal.js";
+import { TodoForm } from "../TodoForm/TodoForm.js";
 import { TodoContext } from "../TodoContext/TodoContext.js";
 
 function AppUI() {
@@ -39,7 +40,11 @@ function AppUI() {
           />
         ))}
       </TodoList>
-      {openModal && <Modal>La funcionalidad de crear Tasks</Modal>}
+      {openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
       <CreateTodoButton />
     </>
   );
