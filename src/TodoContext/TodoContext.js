@@ -36,8 +36,14 @@ function TodoProvider({ children }) {
 
   const addTodo = (text) => {
     const newTodos = [...todos];
-    newTodos.push({ text, completed: false });
-    saveTodos(newTodos);
+    if (
+      !newTodos.some((todo) => todo.text.toLowerCase() === text.toLowerCase())
+    ) {
+      newTodos.push({ text, completed: false });
+      saveTodos(newTodos);
+    } else {
+      alert("Task is already on the list");
+    }
   };
 
   return (
