@@ -83,7 +83,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't ever have to use the `eject` script. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't come in handy if you couldn't customize it when you are ready for it.
 
-### `deploy`
+### `npm run deploy`
 
 Once the **build** is ready to deploy, use this script to push your changes into a new Git branch and host the app in GitHub Pages. **Commit** and **push** all your changes before executing the `npm run build` and `deploy` scripts.
 
