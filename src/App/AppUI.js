@@ -9,6 +9,8 @@ import { EmptyTodos } from "../EmptyTodos/EmptyTodos.js";
 import { CreateTodoButton } from "../CreateTodoButton/CreateTodoButton.js";
 import { Modal } from "../Modal/Modal.js";
 import { TodoForm } from "../TodoForm/TodoForm.js";
+import { EditModal } from "../EditModal/EditModal.js";
+import { EditTodoForm } from "../EditTodoForm/EditTodoForm.js";
 import { TodoContext } from "../TodoContext/TodoContext.js";
 
 function AppUI() {
@@ -19,7 +21,7 @@ function AppUI() {
     completeTodo,
     deleteTodo,
     openModal,
-    setOpenModal,
+    openEditModal,
   } = React.useContext(TodoContext);
 
   return (
@@ -44,6 +46,11 @@ function AppUI() {
         <Modal>
           <TodoForm />
         </Modal>
+      )}
+      {openEditModal && (
+        <EditModal>
+          <EditTodoForm />
+        </EditModal>
       )}
       <CreateTodoButton />
     </>

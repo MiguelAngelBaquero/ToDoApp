@@ -1,7 +1,11 @@
+import React from "react";
 import "./TodoItem.css";
 import { CompleteIcon, UnchekedIcon, DeleteIcon } from "../Icons/Icons.js";
+import { TodoContext } from "../TodoContext/TodoContext";
 
 function TodoItem(props) {
+  const { setOpenEditModal, openEditModal, setText } =
+    React.useContext(TodoContext);
   let iconName = "";
   props.completed ? (iconName = "checked") : (iconName = "unchecked");
   const icon = {
@@ -11,7 +15,13 @@ function TodoItem(props) {
   return (
     <li className="TodoItem">
       {icon[iconName]}
-      <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
+      <p
+        onClick={() => {
+          setOpenEditModal(!openEditModal);
+          setText(props.text);
+        }}
+        className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
+      >
         {props.text}
       </p>
       <DeleteIcon onClick={props.onDelete} />
