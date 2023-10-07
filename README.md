@@ -4,6 +4,10 @@ This app is splendid for practicing your React.js skills.
 You can create, search, edit, and delete tasks (_CRUD_ operations) exploiting the browser's _localStorage_.
 Moreover, the app works for desktop and most mobile browsers.
 
+## Demo
+
+This project is live at [https://miguelangelbaquero.github.io/ToDoApp/](https://miguelangelbaquero.github.io/ToDoApp/)
+
 ## Run Locally
 
 Clone the project
